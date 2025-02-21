@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Price Display</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Crypto Trading Simulator</h1>
+            <div class="balance-container">
+                <span>Balance: $</span>
+                <span id="balance" class="balance-amount">10000.00</span>
+            </div>
+        </header>
+        
+        <div class="trading-interface">
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search for a cryptocurrency...">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+
+            <div class="chart-container">
+                <div id="infoContainer" class="info-container">
+                    <!-- Token name and price will be displayed here -->
+                </div>
+                <ul id="tokenList" class="token-list">
+                    <!-- Token list will be populated dynamically -->
+                </ul>
+                <div id="priceContainer">
+                <canvas id="priceChart" width="200" height="0.5"></canvas>
+                </div>
+                
+            <div class="trading-panel">
+                
+                <div class="trading-controls">
+                    <div class="amount-input">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="amount" placeholder="Enter USD amount" min="0" step="0.01">
+                    </div>
+                    <div class="button-group">
+                        <button id="buyBtn">Buy</button>
+                        <button id="sellBtn">Sell</button>
+                        <button id="sellAllBtn" class="sell-all-btn">Sell All</button>
+                    </div>
+                </div>
+                
+                <div class="portfolio" id="portfolio">
+                    <h3>Your Portfolio</h3>
+                    <div id="selectedTokenInfo">
+                    </div>
+                    <div id="holdings"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tradingPanel">
+        <h3>Trading Panel</h3>
+        <div id="unrealizedPLSection">
+            <h4>Unrealized P&L</h4>
+            <div id="unrealizedPLValue">Unrealized P&L: $0.00</div>
+        </div>
+        <div id="realizedPLSection">
+            <h4>Realized P&L</h4>
+            <div id="realizedPLValue">Realized P&L: $0.00</div>
+        </div>
+    </div>
+    <div id="tradingCard" class="trading-card">
+        <h2>Select a token to see details</h2>
+        <!-- The trading card will be updated here -->
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/trading.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
